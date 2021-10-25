@@ -1,0 +1,109 @@
+h2.main_text {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.products-container {
+    width: 1000px;
+    height: 620px; 
+    margin: auto;
+    margin-top: 80px;    
+}
+
+.cart-row {
+    display: flex;
+    /* background-color: red; */
+
+}
+
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    margin-left: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    /* background-color: yellow; */
+}
+
+
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 20%;
+    font-size: 1.2em;
+}
+
+.cart-quantity {
+    width: 35%;
+}
+
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-right: 5px;
+}
+
+#cart-total-price {
+    font-size: 1.5em;
+    margin-right: 20px;
+}
+
+.item-flavor {
+    margin-left: 25px;
+    margin-top: 20px;
+    display: inline-block;
+
+}
+
+.item-glazing {
+    margin-left: 10px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.item-price {
+    position: absolute;
+    left: 680px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.item-qty {
+    position: absolute;
+    left: 906px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.purchase_button > button{
+    background-color: white;
+    color:black;
+    border: 1px;
+    border-style:solid;
+    border-color: #9d9d9d;
+    padding: 10px 30px;
+    margin-left: 370px;
+    margin-top: 40px;
+    font-size: 18px;
+    width: 300px;
+    height: 60px;
+}
+
+.purchase_button > button:hover {
+    background-color: #FF9B3F;
+}

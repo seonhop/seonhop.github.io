@@ -54,5 +54,8 @@
     height: 60px;
 }
 
+.get_button > button:hover {
+    background-color: #FFB979;
+}
 
 

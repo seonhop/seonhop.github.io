@@ -58,3 +58,7 @@ img {
     display: block;
 }
 
+img:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=40);
+}
