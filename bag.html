@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Bun Bun Bake Shop </title>
     <link rel="stylesheet" href="../styles/nav_style.css" type = "text/css">
-    <link rel="stylesheet" href="../styles/home_style.css" type = "text/css"> 
+    <link rel="stylesheet" href="../styles/bag_style.css" type = "text/css"> 
     <script src="original.js" type = "text/javascript"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
-
+    
 </head>
 <body>
     <div class="header">
@@ -19,8 +19,8 @@
             </a>
         </div>
         <ul class = "nav">
-            <li><a href="home.html"> <b>Home</b> </a></li>
-            <li><a href="cinnamon.html"> Cinnamon Rolls </a></li>
+            <li><a href="home.html"> Home </a></li>
+            <li><a href="cinnamon.html"> Cinnamon Rolls</a></li>
             <li><a href="#"> Find / Contact Us </a></li>
         </ul>
         <ul class="login_box">
@@ -28,24 +28,32 @@
         </ul>
         <ul class="bag_box">
             <li>
-                <a href="bag.html"> Bag
-                    (<span id ="bag_item_count">0</span> </span>)
+                <a href="bag.html"> <b>Bag
+                    (<span id ="bag_item_count">0</span> </span>) </b>
                 </a>
             </li>
         </ul>
-        
     </div>
-    <div class="body">
-        <div class="home_image">
-            <img src="../image/home.png" alt="home image">
+
+    <div class="products-container">
+        <h2 class="main_text">Bag</h2>
+        <div class="cart-row">
+            <span class="cart-item cart-header cart-column">Item</span>
+            <span class="cart-price cart-header cart-column">Price</span>
+            <span class="cart-quantity cart-header cart-column">Quantity</span>
         </div>
-        <div class="welcome_box">
-            <b>Welcome</b>
-            <p>We are a small bakery that specializes in cinnamon rolls, from our famous original cinnamon rolls to a variety of artisan flavors. Our shop is located in Pittsburgh, PA and we ship fresh rolls anywhere in the Pittsburgh area. Visitors to our site should be able to buy cinnamon rolls by different flavors.</p>
-            <a href="cinnamon.html" class="get_button">
-                <button>Get Our Cinnamon Rolls</button>
-            </a>
+        <div class="bag-items">
+
         </div>
+
+        <div class="cart-total">
+            <strong class = "cart-total-title">Total:</strong>
+            <span id="cart-total-price">$0</span>
+        </div>
+
     </div>
+    <a href="#" class="purchase_button">
+        <button>Purchase</button>
+    </a>
 </body>
 </html>

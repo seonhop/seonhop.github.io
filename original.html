@@ -7,8 +7,8 @@
     <title> Bun Bun Bake Shop </title>
     <link rel="stylesheet" href="../styles/nav_style.css" type = "text/css">
     <link rel="stylesheet" href="../styles/original_style.css" type = "text/css"> 
-    <script src="main.js" type = "text/javascript"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <script src="original.js" type = "text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
     
 </head>
 <body>
@@ -20,14 +20,18 @@
         </div>
         <ul class = "nav">
             <li><a href="home.html"> Home </a></li>
-            <li><a href="cinnamon.html"> Cinnamon Rolls </a></li>
+            <li><a href="cinnamon.html"> <b>Cinnamon Rolls </b> </a></li>
             <li><a href="#"> Find / Contact Us </a></li>
         </ul>
         <ul class="login_box">
             <li><a href="#"> Log In </a></li>
         </ul>
         <ul class="bag_box">
-            <li><a href="#"> Bag (0) </a></li>
+            <li>
+                <a href="bag.html"> Bag
+                    (<span id ="bag_item_count">0</span> </span>)
+                </a>
+            </li>
         </ul>
     </div>
 
@@ -39,47 +43,41 @@
                 <img src="../image/original.jpg" alt="original">
             </div>
             <div class="option_block">
-                <p>Glazing</p>
-                <div class="glazing">
-                    <div>
-                        <p>None</p>
-                    </div>
-                    <div>
-                        <p>Sugar-milk</p>
-                    </div>
-                    <div>
-                        <p>Double-chocolate</p> 
-                    </div>
-                    <div>
-                        <p>Vanilla-milk</p>
-                    </div>
-                </div>
-                <p>Quantity</p>
-                <div class="qty">
-                    <div>
-                        <p>1</p>
-                    </div>
-                    <div>
-                        <p>3</p>
-                    </div>
-                    <div>
-                        <p>6</p> 
-                    </div>
-                    <div>
-                        <p>12</p>
-                    </div>
+                <span >Glazing:
+                <select id ="glazing-option">
+                    <option val="">Please choose</option>
+                    <option val="1">None</option>
+                    <option val="2">Sugar-milk</option>
+                    <option val="3">Vanilla-milk</option>
+                    <option val="4">Double-chocolate</option>
+                </select>
+                </span>
+                <span >Quantity:
+                    <select id = "quantity-option">
+                        <option val="">Please choose</option>
+                        <option val="1">1</option>
+                        <option val="2">3</option>
+                        <option val="3">6</option>
+                        <option val="4">12</option>
+                    </select>
+                </span>
+                <div>
+                    <span class = "total-title"> Total: </span>
+                    <span>$1.50</span>
                 </div>
                 <div class="purchase_opt">
-                    <p id = "total">Total: $1.50</p>
-
                     <div>
                         <p>Check out</p>
                     </div>
-                    <div>
+                    <div class = "add-to-bag-box">
                         <p>Add to bag</p>
                     </div>
-
+    
                 </div> 
+
+            </div>
+
+
 
                 </div>
             </div>
