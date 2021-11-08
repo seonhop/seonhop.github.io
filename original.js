@@ -4,11 +4,11 @@ if (document.readyState == 'loading') {
     ready();
 }
 function ready() {
-    var remove_buttons = document.getElementsByClassName('btn-danger')
-    for (var i = 0; i < removeCartItemButtons.length; i++) {
-        var button = removeCartItemButtons[i]
-        button.addEventListener('click', removeCartItem)
-    }
+    // var remove_buttons = document.getElementsByClassName('btn-danger')
+    // for (var i = 0; i < removeCartItemButtons.length; i++) {
+    //     var button = removeCartItemButtons[i]
+    //     button.addEventListener('click', removeCartItem)
+    // }
 
     clickAddToBag();
     updateBagCount();
