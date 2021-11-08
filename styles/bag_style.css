@@ -90,13 +90,17 @@ h2.main_text {
     display: inline-block;
 }
 
-.remove-button {
+.remove-btn {
     background-color: white;
     border: 1px;
     padding: 5px;
     border-style: solid;
     border-color: #9d9d9d;
-    display: inline-block;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FF9B3F;
 }
 
 

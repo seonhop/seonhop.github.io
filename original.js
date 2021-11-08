@@ -4,22 +4,35 @@ if (document.readyState == 'loading') {
     ready();
 }
 function ready() {
-    // var remove_buttons = document.getElementsByClassName('btn-danger')
-    // for (var i = 0; i < removeCartItemButtons.length; i++) {
-    //     var button = removeCartItemButtons[i]
-    //     button.addEventListener('click', removeCartItem)
-    // }
-
     clickAddToBag();
     updateBagCount();
     displayCart();
 }
 
+function greet() {
+    console.log('Hey there clicker!');
+}
 
+
+function removeItem(event) {
+    console.log(event)
+    event.parentElement.remove()
+    var existingItems = JSON.parse(localStorage.getItem("allItems"));
+    const index = event.id;
+    qty_val = existingItems[index]["qty"]
+    existingItems.splice(index, 1);
+    // console.log(existingItems)
+    item = existingItems[index];
+    var bag_count = parseInt(document.getElementById("bag_item_count").textContent);
+
+    localStorage.setItem("bag_count", bag_count - qty_val);
+    localStorage.setItem("allItems", JSON.stringify(existingItems));
+    displayCart()
+    updateBagCount()
+}
 
 function updateBagCount() {
     var bag_count = localStorage.getItem("bag_count")
-    console.log(bag_count)
     if(bag_count == null) {
         bag_count = 0
     }
@@ -79,11 +92,11 @@ function displayCart() {
             <span class="cart-quantity cart-header cart-column">Quantity</span>
         </div>
         `
-
+        var i = 0
         Object.values(bagItems).map(item => {
             bagMainPage.innerHTML += `
             <div class = "bag-items">
-                <button>remove</button>
+                <button onclick = "removeItem(this)" class = "remove-btn" id = ${i}>remove</button>
                 <div class="item-flavor">${item.flavor};</div>
                 <div class="item-glazing">${item.glazing}</div>
                 <div class = "item-price">${item.price}</div>
@@ -91,8 +104,10 @@ function displayCart() {
 
             </div>
             `
+            i += 1
             totalPrice += parseFloat(item.price) * parseInt(item.qty)
         })
+
         bagMainPage.innerHTML += `
         <div class="cart-total">
             <strong class = "cart-total-title">Total:</strong>
@@ -102,9 +117,9 @@ function displayCart() {
         <button>Purchase</button>
         </a>
         `
+        document.getElementById("cart-total-price").textContent = "$" + totalPrice;
 
     }
-    document.getElementById("cart-total-price").textContent = "$" + totalPrice;
 
 }
 
