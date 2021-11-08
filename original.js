@@ -4,6 +4,12 @@ if (document.readyState == 'loading') {
     ready();
 }
 function ready() {
+    var remove_buttons = document.getElementsByClassName('btn-danger')
+    for (var i = 0; i < removeCartItemButtons.length; i++) {
+        var button = removeCartItemButtons[i]
+        button.addEventListener('click', removeCartItem)
+    }
+
     clickAddToBag();
     updateBagCount();
     displayCart();
@@ -61,8 +67,6 @@ function clickAddToBag() {
 
 function displayCart() {
     var bagMainPage = document.querySelector(".products-container")
-    var bagPage = document.querySelector(".bag-items");
-    var bagTotal = document.querySelector(".cart-total")
     var bagItems = JSON.parse(localStorage.getItem("allItems"));
     var totalPrice = 0
     if(bagItems && bagMainPage){
@@ -79,10 +83,12 @@ function displayCart() {
         Object.values(bagItems).map(item => {
             bagMainPage.innerHTML += `
             <div class = "bag-items">
+                <button>remove</button>
                 <div class="item-flavor">${item.flavor};</div>
                 <div class="item-glazing">${item.glazing}</div>
                 <div class = "item-price">${item.price}</div>
                 <div class = "item-qty">${item.qty}</div>
+
             </div>
             `
             totalPrice += parseFloat(item.price) * parseInt(item.qty)
@@ -95,7 +101,6 @@ function displayCart() {
         <a href="#" class="purchase_button">
         <button>Purchase</button>
         </a>
-
         `
 
     }
